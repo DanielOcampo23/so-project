@@ -48,7 +48,7 @@ El siguiente proyecto consiste en el despliegue de una aplicación web para obte
 
 Para la realización del proyecto seguimos los siguientes pasos:
 
-1. ######_Intalación de Ubuntu 16.04:_ Se descargó la ISO de `Ubuntu Server` y se realizó la instalacción utilizandop VirtualBox como se muestra a continuación:
+#### *1. Intalación de Ubuntu 16.04:* Se descargó la ISO de `Ubuntu Server` y se realizó la instalacción utilizando VirtualBox como se muestra a continuación:
 
   * Configuración de la maquina virtual
   
@@ -72,7 +72,7 @@ Para la realización del proyecto seguimos los siguientes pasos:
   * 
   
 
-2. ######_Configuración de la interfaces de red:_ Ésta se realizó a través de la interfaz de VirtualBox en modo `Adaptador puente (Bridge)` el cual nos permite conectar dos segmentos de red iguales o distintos para que así a traves de otro nodo se pueda acceder al servicio de wed del nodo en el que se pondra el servicio web a través de flask. A continuación mostramos como se realizó dicho proceso.
+#### *2. Configuración de la interfaces de red:* Ésta se realizó a través de la interfaz de VirtualBox en modo `Adaptador puente (Bridge)` el cual nos permite conectar dos segmentos de red iguales o distintos para que así a traves de otro nodo se pueda acceder al servicio de wed del nodo en el que se pondra el servicio web a través de flask. A continuación mostramos como se realizó dicho proceso.
 
   * Configuración de la red
   
@@ -87,7 +87,7 @@ Para la realización del proyecto seguimos los siguientes pasos:
      </p>
       
 
-3. ######_Configuración de puertos:_ Una vez configurada la interfaces de red, proseguimos a congigurar los puertos, para esto se realizaron los siguientes pasos:
+#### *3. Configuración de puertos:* Una vez configurada la interfaces de red, proseguimos a congigurar los puertos, para esto se realizaron los siguientes pasos:
 
   * Se habilito el firewall a través de la herramienta `ufw` con el siguiente comando
   
@@ -116,7 +116,7 @@ Para la realización del proyecto seguimos los siguientes pasos:
      </p>
   
 
-4. ######_Instalación de las dependencias:_ Para esto realizamos los siguientes pasos
+#### *4. Instalación de las dependencias:* Para esto realizamos los siguientes pasos
 
   *
 
