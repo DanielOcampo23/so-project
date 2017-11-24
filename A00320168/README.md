@@ -1,6 +1,13 @@
 ## Miniproyecto Sistemas Operativos
 
 **Universidad ICESI**  
+
+**Nombres:**
+  * Esteban Camacho B. - A00320168  
+  * Oscar Daniel Molano. - A00267576 
+  
+**Github URL:** https://github.com/LookIron/so-project
+
 **Curso:** Sistemas Operativos  
 **Docente:** Daniel Barragán C.  
 **Tema:**  Servicios web  
@@ -35,6 +42,28 @@ El siguiente proyecto consiste en el despliegue de una aplicación web para obte
 * Pruebas de la solución a través de capturas de pantalla. Puede emplear si lo desea una herramienta de captura de pantalla a formato .gif (10%)
 * El informe debe ser entregado en formato pdf a través del moodle y el informe en formato README.md debe ser subido a un repositorio de github. El repositorio de github debe ser un fork de https://github.com/ICESI-Training/so-project y para la entrega deberá hacer un Pull Request (PR) respetando la estructura definida. El código fuente y la url de github deben incluirse en el informe (10%).
 
+-------------
+
+## Solución
+
+Para la realización del proyecto seguimos los siguientes pasos:
+
+1. Se descargó la ISO de `Ubuntu Server` y se realizó la instalacción utilizandop VirtualBox como se muestra a continuación:
+  *
+    <p align="center">
+    <img src="images/vista-despliegue.png" alt="webservice architecture"/>
+    </p>
+
+2. Para la configuración de la interfaces de red se realizó a través de la interfaz de VirtualBox en modo `Adaptador puente (Bridge)` el cual nos permite conectar dos segmentos de red iguales o distintos para que así a traves de otro nodo se pueda acceder al servicio de wed del nodo en el que se pondra el servicio web a través de flask. A continuación mostramos como se realizo dicho proceso.
+
+  *
+
+
+
+
+
+
+ 
 ## Referencias
 * https://www.ubuntu.com/download/server
 
