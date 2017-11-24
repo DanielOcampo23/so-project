@@ -77,13 +77,13 @@ Para la realización del proyecto seguimos los siguientes pasos:
   * Configuración de la red
   
      <p align="center">
-     <img src="images/.png" alt="webservice architecture"/>
+     <img src="images/red1.png" alt="webservice architecture"/>
      </p>
     
   * Verificación del archivo interfaces: Debido a que nuestra red cuenta con `dhcp` la ip se genera dinamicamente por la tanto no es necesario que nuestra interfaces sea estatica y no se estipule en el archivo de configuración.
   
      <p align="center">
-     <img src="images/.png" alt="webservice architecture"/>
+     <img src="images/red2.png" alt="webservice architecture"/>
      </p>
       
 
@@ -116,13 +116,45 @@ Para la realización del proyecto seguimos los siguientes pasos:
      </p>
   
 
-#### *4. Instalación de las dependencias:* Para esto realizamos los siguientes pasos
+#### *4. Instalación de las dependencias:* Para esto realizamos los siguientes pasos:
 
-  *
+  * Se instaló pip
+  
+     ```vim
+     # ufw status verbose
+
+     ```
+  
+  * Se instaló Flask
+  
+     ```vim
+     # ufw status verbose
+
+     ```
+  
+  * Se instaló virtulenv
+  
+      ```vim
+     # ufw status verbose
+
+     ```
+  
+  * Se instaló virtualwrapper
+  
+     ```vim
+     # ufw status verbose
+
+     ```
+  
+  * Verificación de las dependencias instaladas
+  
+     <p align="center">
+     <img src="images/.png" alt="webservice architecture"/>
+     </p>
 
 5.
 
-  * Configuración de la red
+  * 
   
   *
   
