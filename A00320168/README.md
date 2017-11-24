@@ -48,15 +48,87 @@ El siguiente proyecto consiste en el despliegue de una aplicación web para obte
 
 Para la realización del proyecto seguimos los siguientes pasos:
 
-1. Se descargó la ISO de `Ubuntu Server` y se realizó la instalacción utilizandop VirtualBox como se muestra a continuación:
-  *
-    <p align="center">
-    <img src="images/vista-despliegue.png" alt="webservice architecture"/>
-    </p>
+1. ######_Intalación de Ubuntu 16.04:_ Se descargó la ISO de `Ubuntu Server` y se realizó la instalacción utilizandop VirtualBox como se muestra a continuación:
 
-2. Para la configuración de la interfaces de red se realizó a través de la interfaz de VirtualBox en modo `Adaptador puente (Bridge)` el cual nos permite conectar dos segmentos de red iguales o distintos para que así a traves de otro nodo se pueda acceder al servicio de wed del nodo en el que se pondra el servicio web a través de flask. A continuación mostramos como se realizo dicho proceso.
+  * Configuración de la maquina virtual
+  
+     <p align="center">
+     <img src="images/ubuntu1.png" alt="webservice architecture"/>
+     </p>
+     
+  * Instalacción de `Ubuntu Server 16.04`
+  
+     <p align="center">
+     <img src="images/ubuntu2.png" alt="webservice architecture"/>
+     </p>
+    
+  * Posterior a esto se creó un usuario proyecto para la realización de los demás pasos.
+  
+     ```vim
+     # adduser proyecto
+     # pwdpass ********
+     
+     ```
+  * 
+  
+
+2. ######_Configuración de la interfaces de red:_ Ésta se realizó a través de la interfaz de VirtualBox en modo `Adaptador puente (Bridge)` el cual nos permite conectar dos segmentos de red iguales o distintos para que así a traves de otro nodo se pueda acceder al servicio de wed del nodo en el que se pondra el servicio web a través de flask. A continuación mostramos como se realizó dicho proceso.
+
+  * Configuración de la red
+  
+     <p align="center">
+     <img src="images/.png" alt="webservice architecture"/>
+     </p>
+    
+  * Verificación del archivo interfaces: Debido a que nuestra red cuenta con `dhcp` la ip se genera dinamicamente por la tanto no es necesario que nuestra interfaces sea estatica y no se estipule en el archivo de configuración.
+  
+     <p align="center">
+     <img src="images/.png" alt="webservice architecture"/>
+     </p>
+      
+
+3. ######_Configuración de puertos:_ Una vez configurada la interfaces de red, proseguimos a congigurar los puertos, para esto se realizaron los siguientes pasos:
+
+  * Se habilito el firewall a través de la herramienta `ufw` con el siguiente comando
+  
+     ```vim
+     # ufw enable
+
+     ```
+     
+  * Se habilito el puerto 8080 para los servicios que se van a prestar, con el siguiente comando
+  
+     ```vim
+     # ufw allow 8080
+
+     ```
+  
+  * Por último verificamos que efectivamente estan habilitado, con el siguiente comando.
+  
+     ```vim
+     # ufw status verbose
+
+     ```
+  * Prueba de funcionamiento
+  
+     <p align="center">
+     <img src="images/confPuerto.png" alt="webservice architecture"/>
+     </p>
+  
+
+4. ######_Instalación de las dependencias:_ Para esto realizamos los siguientes pasos
 
   *
+
+5.
+
+  * Configuración de la red
+  
+  *
+  
+  *
+  
+  
 
 
 
