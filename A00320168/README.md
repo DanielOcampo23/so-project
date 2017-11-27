@@ -5,6 +5,7 @@
 **Nombres:**
   * Esteban Camacho B. - A00320168  
   * Oscar Daniel Molano. - A00267576 
+  * Jhon Eduar Tobar G. - A00316212
   
 **Github URL:** https://github.com/LookIron/so-project
 
@@ -72,7 +73,7 @@ Para la realización del proyecto seguimos los siguientes pasos:
   * 
   
 
-#### *2. Configuración de la interfaces de red:* Ésta se realizó a través de la interfaz de VirtualBox en modo `Adaptador puente (Bridge)` el cual nos permite conectar dos segmentos de red iguales o distintos para que así a traves de otro nodo se pueda acceder al servicio de wed del nodo en el que se pondra el servicio web a través de flask. A continuación mostramos como se realizó dicho proceso.
+#### *2. Configuración de la interfaces de red:* Ésta se realizó a través de la interfaz de VirtualBox en dos modos uno `NAT` que nos permite traducir las IPs privadas de la red en una IP pública para que la red pueda enviar paquetes al exterior; y traducir luego esa IP pública, de nuevo a la IP privada del pc que envió el paquete, para que pueda recibirlo una vez que llega la respuesta. Y un modo `Adaptador puente (Bridge)` el cual nos permite conectar dos segmentos de red iguales o distintos para que así a traves de otro nodo se pueda acceder al servicio de wed del nodo en el que se pondra el servicio web a través de flask. A continuación mostramos como se realizó dicho proceso.
 
   * Configuración de la red
   
@@ -80,7 +81,7 @@ Para la realización del proyecto seguimos los siguientes pasos:
      <img src="images/red1.png" alt="webservice architecture"/>
      </p>
     
-  * Verificación del archivo interfaces: Debido a que nuestra red cuenta con `dhcp` la ip se genera dinamicamente por la tanto no es necesario que nuestra interfaces sea estatica y no se estipule en el archivo de configuración.
+  * Verificación del archivo interfaces: Debido a que nuestra red cuenta con `dhcp` la ip se genera dinamicamente por la tanto vamos a fijar nuestra interfaces para que sea estatica y quede permanente en el archivo de configuración.
   
      <p align="center">
      <img src="images/red2.png" alt="webservice architecture"/>
@@ -118,10 +119,14 @@ Para la realización del proyecto seguimos los siguientes pasos:
 
 #### *4. Instalación de las dependencias:* Para esto realizamos los siguientes pasos:
 
-  * Se instaló pip
+  * Debemos de verificar la versión de python la cual en `Ubuntu Server 16.04` viene por defecto la 3, y para nuestras pruebas vamos a utilizar la versión 2.7. Ahora instalamos las dependencias necesarias para `Python`.
   
-     ```vim
-     # ufw status verbose
+     ```vim
+     # apt-get install build-essential checkinstall
+     # apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+     # wget https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz
+     # tar xzf Python-2.7.13.tgz
+     
 
      ```
   
