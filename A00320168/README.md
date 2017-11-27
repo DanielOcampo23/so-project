@@ -62,6 +62,10 @@ Para la realización del proyecto seguimos los siguientes pasos:
      <p align="center">
      <img src="images/ubuntu2.png" alt="webservice architecture"/>
      </p>
+     
+     <p align="center">
+     <img src="images/int1.png" alt="webservice architecture"/>
+     </p>
     
   * Posterior a esto se creó un usuario proyecto para la realización de los demás pasos.
   
@@ -80,11 +84,15 @@ Para la realización del proyecto seguimos los siguientes pasos:
      <p align="center">
      <img src="images/red1.png" alt="webservice architecture"/>
      </p>
+     
+     <p align="center">
+     <img src="images/red2.png" alt="webservice architecture"/>
+     </p>
     
   * Verificación del archivo interfaces: Debido a que nuestra red cuenta con `dhcp` la ip se genera dinamicamente por la tanto vamos a fijar nuestra interfaces para que sea estatica y quede permanente en el archivo de configuración.
   
      <p align="center">
-     <img src="images/red2.png" alt="webservice architecture"/>
+     <img src="images/red3.png" alt="webservice architecture"/>
      </p>
       
 
@@ -117,7 +125,7 @@ Para la realización del proyecto seguimos los siguientes pasos:
      </p>
   
 
-#### *4. Instalación de las dependencias:* Para esto realizamos los siguientes pasos:
+#### *4. Instalación de las dependencias:* Debemos realizar esto para la configuración del ambiente virtual. Para esto realizamos los siguientes pasos:
 
   * Debemos de verificar la versión de python la cual en `Ubuntu Server 16.04` viene por defecto la 3, y para nuestras pruebas vamos a utilizar la versión 2.7. Ahora instalamos las dependencias necesarias para `Python`.
   
@@ -129,11 +137,26 @@ Para la realización del proyecto seguimos los siguientes pasos:
      
 
      ```
-  
-  * Se instaló Flask
+  Una vez descargado y descomprimido este archivo proseguimos a la compilación e instalación
   
      ```vim
-     # ufw status verbose
+     # cd Python-2.7.13
+     # sudo ./configure
+     # sudo make install
+    
+     ```
+  
+  * despues de configurar e instalar python debemos instalar y configurar en ambiente virtual
+  
+     ```vim
+     # sudo wget https://bootstrap.pypa.io/get-pip.py
+     # python get-pip.py
+     # pip install virtualenv
+     
+     # cd ~/
+     # mkdir envs
+     # cd envs
+     # virtualenv flask_env
 
      ```
   
