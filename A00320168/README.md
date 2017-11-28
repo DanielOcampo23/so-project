@@ -276,4 +276,5 @@ Para la realización del proyecto seguimos los siguientes pasos:
 * https://www.ubuntu.com/download/server
 * https://gist.github.com/celtha/1214442
 * https://conectabell.com/procfs-con-python/
+* Funcionamiento: https://youtu.be/tuykFwNYWfQ
 
