@@ -43,7 +43,7 @@ El siguiente proyecto consiste en el despliegue de una aplicación web para obte
 * Pruebas de la solución a través de capturas de pantalla. Puede emplear si lo desea una herramienta de captura de pantalla a formato .gif (10%)
 * El informe debe ser entregado en formato pdf a través del moodle y el informe en formato README.md debe ser subido a un repositorio de github. El repositorio de github debe ser un fork de https://github.com/ICESI-Training/so-project y para la entrega deberá hacer un Pull Request (PR) respetando la estructura definida. El código fuente y la url de github deben incluirse en el informe (10%).
 
--------------
+----------------
 
 ## Solución
 
@@ -51,13 +51,13 @@ Para la realización del proyecto seguimos los siguientes pasos:
 
 #### *1. Intalación de Ubuntu 16.04:* Se descargó la ISO de `Ubuntu Server` y se realizó la instalacción utilizando VirtualBox como se muestra a continuación:
 
-  * Configuración de la maquina virtual
+  * ###### _Configuración de la maquina virtual:_
   
      <p align="center">
      <img src="images/ubuntu1.png" alt="webservice architecture"/>
      </p>
      
-  * Instalacción de `Ubuntu Server 16.04`
+  * ###### _Instalacción de `Ubuntu Server 16.04`_
   
      <p align="center">
      <img src="images/ubuntu2.png" alt="webservice architecture"/>
@@ -74,8 +74,8 @@ Para la realización del proyecto seguimos los siguientes pasos:
      # pwdpass ********
      
      ```
-  * 
-  
+ 
+--------------------------
 
 #### *2. Configuración de la interfaces de red:* Ésta se realizó a través de la interfaz de VirtualBox en dos modos uno `NAT` que nos permite traducir las IPs privadas de la red en una IP pública para que la red pueda enviar paquetes al exterior; y traducir luego esa IP pública, de nuevo a la IP privada del pc que envió el paquete, para que pueda recibirlo una vez que llega la respuesta. Y un modo `Adaptador puente (Bridge)` el cual nos permite conectar dos segmentos de red iguales o distintos para que así a traves de otro nodo se pueda acceder al servicio de wed del nodo en el que se pondra el servicio web a través de flask. A continuación mostramos como se realizó dicho proceso.
 
@@ -91,11 +91,16 @@ Para la realización del proyecto seguimos los siguientes pasos:
     
   * Verificación del archivo interfaces: Debido a que nuestra red cuenta con `dhcp` la ip se genera dinamicamente por la tanto NO vamos a fijar nuestra interfaces para que sea estatica y quede permanente sino que el archivo la dejaremos así, y a través del comando en el siguiente ítem habilitaremos la ip de la interfaces manual. A continuación mostramos el archivo de configuración.
   
-     ```vim
-     # vim /etc/network/interfaces
+    ###### _Accedemos al archivo interfaces_
+     
+     ```python
+      # vim /etc/network/interfaces
+      
      ```
      
-     ```vim
+    ###### _Configuramos el archivo_
+     
+     ```python
       # This file describes the network interfaces available on your system
       # and how to activate them. For more information, see interfaces(5).
       
@@ -116,19 +121,24 @@ Para la realización del proyecto seguimos los siguientes pasos:
      ```
      
   * Luego de lo anterior y reiniciar la red realizamos lo siguiente para poner la ip de la interfaces, luego habilitamos la ip del gateway y luego reiniciamos la red.
+  
     
      ```vim
-     # ip addr add 192.168.130.170/24 dev enp0s8
-     # route add default gw 192.168.130.1
-     # service networking restart
+      # ip addr add 192.168.130.170/24 dev enp0s8
+      # route add default gw 192.168.130.1
+      # service networking restart
      ```
   
   * Vale aclarar que los comandos se realizaron por conexión ssh como se muestra a continuación, el primer comando lo ejecutamos desde la maquina virtual, y la conexión la realizamos desde el nodo host.
   
-     ```vim
-     # apt-get install openssh
-     ```
+  
+    ###### _Instalación de Openssh_
      
+     ```vim
+      # apt-get install openssh
+     ```
+    ###### _Verificamos el funcionamiento_
+    
      <p align="center">
      <img src="images/ssh.png" alt="webservice architecture"/>
      </p>
@@ -139,21 +149,21 @@ Para la realización del proyecto seguimos los siguientes pasos:
   * Se habilito el firewall a través de la herramienta `ufw` con el siguiente comando
   
      ```vim
-     # ufw enable
+      # ufw enable
 
      ```
      
   * Se habilito el puerto 8080 para los servicios que se van a prestar, con el siguiente comando
   
      ```vim
-     # ufw allow 8080
+      # ufw allow 8080
 
      ```
   
   * Por último verificamos que efectivamente estan habilitado, con el siguiente comando.
   
      ```vim
-     # ufw status verbose
+      # ufw status verbose
 
      ```
   * Prueba de funcionamiento
@@ -167,11 +177,15 @@ Para la realización del proyecto seguimos los siguientes pasos:
 
   * Debemos de verificar la versión de python la cual en `Ubuntu Server 16.04` viene por defecto la 3, una vez realizado esto se instalaron las siguientes dependencias:
   
-     ```vim
-     # sudo apt-get install python3-pip
-     # sudo pip3 install virtualenv     
+    ###### _Instalacion de pip y virtualenv_
+     
+     ```vim
+      # sudo apt-get install python3-pip
+      # sudo pip3 install virtualenv     
 
      ```     
+    ###### _Instalación_
+    
      <p align="center">
      <img src="images/instalDepen.png" alt="webservice architecture"/>
      </p>
@@ -179,18 +193,25 @@ Para la realización del proyecto seguimos los siguientes pasos:
   * Una vez descargado las dependencias para el ambiente de virtualización creamos el ambiente `proyecto` 
   
      ```vim
-     # virtualenv proyecto
+      # virtualenv proyecto
     
      ```
   * Proseguimos a activar el ambiente
   
      ```vim
-     # source proyecto/bin/activate
+      # source proyecto/bin/activate
     
      ```
        
   * Ahora dentro del ambiente instalamos `flask`
   
+    ###### _Instalación_
+    
+     <p align="center">
+     <img src="images/entorno.png" alt="webservice architecture"/>
+     </p>
+     
+    ###### _Verificación_
      <p align="center">
      <img src="images/intDependencias.png" alt="webservice architecture"/>
      </p>
@@ -200,7 +221,7 @@ Para la realización del proyecto seguimos los siguientes pasos:
 
   * Dentro del entorno virtual creamos el siguiente script  `services.py`
   
-      ```vim
+      ```python
       from flask import Flask
       import os
       app = Flask(__name__)
