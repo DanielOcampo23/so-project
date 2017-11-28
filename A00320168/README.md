@@ -187,13 +187,120 @@ Para la realización del proyecto seguimos los siguientes pasos:
   *
   
   *
+  Proyecto Final - Sistemas Operacionales
+  https://youtu.be/tuykFwNYWfQ
   
-  
+------------------------  
+
+from flask import Flask
+import os
+app = Flask(__name__)
+
+@app.route("/memoria")
+def memory():
+        m=os.system("echo | free > /home/proyecto/memory_Info.txt")
+        f=open("/home/proyecto/memory_Info.txt","r")
+        return f.read()
+
+@app.route("/cpu")
+def cpu():
+        m=os.system("echo | lscpu > /home/proyecto/cpu_Info.txt")
+        f=open("/home/proyecto/cpu_Info.txt","r")
+        return f.read()
+
+@app.route("/disco")
+def disk():
+        m=os.system("echo | df > /home/proyecto/disco_Info.txt")
+        f=open("/home/proyecto/disco_Info.txt","r")
+        return f.read()
+
+@app.route("/netstat")
+def netstat():
+        m=os.system("echo | netstat > /home/proyecto/netstat_Info.txt")
+        f=open("/home/proyecto/netstat_Info.txt","r")
+        return f.read()
+
+if __name__=="__main__":
+        app.run('0.0.0.0',port=8080)
+----------------------------
 
 
+ip addr add 192.168.130.100/24 dev enp0s3
+    3  ping 8.8.8.8
+    4  clear
+    5  sudo apt-get install python3-pip
+    6  clear
+    7  sudo pip3 install virtualenv
+    8  clear
+    9  ip a
+   10  ip addr add 192.168.130.170/24 dev enp0s3
+   11  sudo ip addr add 192.168.130.170/24 dev enp0s3
+   12  sudo nmcli con up enp0s8
+   13  sudo nmcli con up enp0s3
+   14  ip a
+   15  ping 8.8.8.8
+   16  clear
+   17  virtualenv proyecto
+   18  source proyecto/bin/activate
+   19  pip install flask
+   20  vi script.py
+   21  exit
+   22  ip a
+   23  ls /etc/network/
+   24  nano /etc/network/interfaces
+   25  ls /etc/network/
+   26  nano /etc/network/interfaces
+   27  ip a
+   28  sudo nano /etc/network/interfaces
+   29  sudo service networking restart
+   30  service networking status
+   31  ip addr add 192.168.130.170/24 dev enp0s8
+   32  sudo ip addr add 192.168.130.170/24 dev enp0s8
+   33  ip a
+   34  ping 192.168.130.1 -S
+   35  ping 192.168.130.1 -I enp0s8
+   36  ping 192.168.113.1 -I enp0s8
+   37  ping 192.168.130.1 -I enp0s8
+   38  ping 192.168.113.1 -I enp0s8
+   39  ping 8.8.8.8 -I enp0s8
+   40  nmcli
+   41  sudo route add default gw 192.168.130.1
+   42  ping 8.8.8.8 -I enp0s8
+   43  ping 192.168.113.1 -I enp0s8
+   44  sudo service networking restart
+   45  sudo service networking restart -v
+   46  sudo service networking restart
+   47  ping 192.168.113.1 -I enp0s8
+   48  ping 192.168.113.1 -v
+   49  ip a
+   50  ping 192.168.104.1
+   51  ping 8.8.8.8
+   52  apt-get install openssh-server
+   53  sudo apt-get install openssh-server
+   54  ufw
+   55  ufw ?
+   56  ufw status verbose
+   57  sudo ufw status verbose
+   58  cat /etc/network/interfaces
+-----------------------------------------------------
 
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
 
+source /etc/network/interfaces.d/*
 
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto enp0s3
+iface enp0s3 inet dhcp
+
+# The secondary network interface
+auto enp0s8
+iface enp0s8 inet manual
+-------------------------------------------
 
  
 ## Referencias
