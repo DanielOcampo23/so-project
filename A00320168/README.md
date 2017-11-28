@@ -77,6 +77,7 @@ Para la realización del proyecto seguimos los siguientes pasos:
  
 --------------------------
 
+
 #### *2. Configuración de la interfaces de red:* Ésta se realizó a través de la interfaz de VirtualBox en dos modos uno `NAT` que nos permite traducir las IPs privadas de la red en una IP pública para que la red pueda enviar paquetes al exterior; y traducir luego esa IP pública, de nuevo a la IP privada del pc que envió el paquete, para que pueda recibirlo una vez que llega la respuesta. Y un modo `Adaptador puente (Bridge)` el cual nos permite conectar dos segmentos de red iguales o distintos para que así a traves de otro nodo se pueda acceder al servicio de wed del nodo en el que se pondra el servicio web a través de flask. A continuación mostramos como se realizó dicho proceso.
 
   * Configuración de la red
@@ -122,11 +123,10 @@ Para la realización del proyecto seguimos los siguientes pasos:
      
   * Luego de lo anterior y reiniciar la red realizamos lo siguiente para poner la ip de la interfaces, luego habilitamos la ip del gateway y luego reiniciamos la red.
   
-    
-     ```vim
-      # ip addr add 192.168.130.170/24 dev enp0s8
-      # route add default gw 192.168.130.1
-      # service networking restart
+     ```vim
+     # ip addr add 192.168.130.170/24 dev enp0s8
+     # route add default gw 192.168.130.1
+     # service networking restart
      ```
   
   * Vale aclarar que los comandos se realizaron por conexión ssh como se muestra a continuación, el primer comando lo ejecutamos desde la maquina virtual, y la conexión la realizamos desde el nodo host.
@@ -143,7 +143,9 @@ Para la realización del proyecto seguimos los siguientes pasos:
      <img src="images/ssh.png" alt="webservice architecture"/>
      </p>
 
+
 --------------------------------
+
 
 #### *3. Configuración de puertos:* Una vez configurada la interfaces de red, proseguimos a congigurar los puertos, para esto se realizaron los siguientes pasos:
 
@@ -173,20 +175,22 @@ Para la realización del proyecto seguimos los siguientes pasos:
      <img src="images/confPuerto.png" alt="webservice architecture"/>
      </p>
   
+  
 ------------------------------------
+
 
 #### *4. Instalación de las dependencias:* Debemos realizar esto para la configuración del ambiente virtual. Para esto realizamos los siguientes pasos:
 
   * Debemos de verificar la versión de python la cual en `Ubuntu Server 16.04` viene por defecto la 3, una vez realizado esto se instalaron las siguientes dependencias:
   
-     ###### _Instalacion de pip y virtualenv_
+     _Instalacion de pip y virtualenv_
      
-      ```python
+      ```vim
        # sudo apt-get install python3-pip
        # sudo pip3 install virtualenv
       ```     
      
-     ###### _Instalación_
+     _Instalación_
     
      <p align="center">
      <img src="images/instalDepen.png" alt="webservice architecture"/>
@@ -194,30 +198,34 @@ Para la realización del proyecto seguimos los siguientes pasos:
      
   * Una vez descargado las dependencias para el ambiente de virtualización creamos el ambiente `proyecto` 
   
-     ```python
+     ```vim
       # virtualenv proyecto
      ```
      
   * Proseguimos a activar el ambiente
   
-     ```python
+     ```vim
       # source proyecto/bin/activate
      ```
        
   * Ahora dentro del ambiente instalamos `flask`
   
-    ###### _Instalación_
+     _Instalación_
     
      <p align="center">
      <img src="images/entorno.png" alt="webservice architecture"/>
      </p>
      
-    ###### _Verificación_
+     _Verificación_
     
      <p align="center">
      <img src="images/intDependencias.png" alt="webservice architecture"/>
      </p>
-  
+
+
+---------------------------------------------
+
+
 
 #### *5. Aplicación en Python:* Para este paso creamos la un script el cual tendrá los servicios requeridos dentro del proyecto como la consulta del uso de cpu, espacio en disco, la memoria y el netstat.
 
