@@ -142,7 +142,8 @@ Para la realización del proyecto seguimos los siguientes pasos:
      <p align="center">
      <img src="images/ssh.png" alt="webservice architecture"/>
      </p>
-      
+
+--------------------------------
 
 #### *3. Configuración de puertos:* Una vez configurada la interfaces de red, proseguimos a congigurar los puertos, para esto se realizaron los siguientes pasos:
 
@@ -172,19 +173,20 @@ Para la realización del proyecto seguimos los siguientes pasos:
      <img src="images/confPuerto.png" alt="webservice architecture"/>
      </p>
   
+------------------------------------
 
 #### *4. Instalación de las dependencias:* Debemos realizar esto para la configuración del ambiente virtual. Para esto realizamos los siguientes pasos:
 
-  * Debemos de verificar la versión de python la cual en `Ubuntu Server 16.04` viene por defecto la 3, una vez realizado esto se instalaron las siguientes dependencias:
+  * Debemos de verificar la versión de python la cual en `Ubuntu Server 16.04` viene por defecto la 3, una vez realizado esto se instalaron las siguientes dependencias:
   
-    ###### _Instalacion de pip y virtualenv_
+     ###### _Instalacion de pip y virtualenv_
      
-     ```vim
-      # sudo apt-get install python3-pip
-      # sudo pip3 install virtualenv     
-
-     ```     
-    ###### _Instalación_
+      ```python
+       # sudo apt-get install python3-pip
+       # sudo pip3 install virtualenv
+      ```     
+     
+     ###### _Instalación_
     
      <p align="center">
      <img src="images/instalDepen.png" alt="webservice architecture"/>
@@ -192,15 +194,14 @@ Para la realización del proyecto seguimos los siguientes pasos:
      
   * Una vez descargado las dependencias para el ambiente de virtualización creamos el ambiente `proyecto` 
   
-     ```vim
+     ```python
       # virtualenv proyecto
-    
      ```
+     
   * Proseguimos a activar el ambiente
   
-     ```vim
+     ```python
       # source proyecto/bin/activate
-    
      ```
        
   * Ahora dentro del ambiente instalamos `flask`
@@ -212,6 +213,7 @@ Para la realización del proyecto seguimos los siguientes pasos:
      </p>
      
     ###### _Verificación_
+    
      <p align="center">
      <img src="images/intDependencias.png" alt="webservice architecture"/>
      </p>
@@ -254,7 +256,7 @@ Para la realización del proyecto seguimos los siguientes pasos:
       
       ```
   
-  * Ya creado el script lo ejecutamos dentro del ambiente virtual ya creado y activado, a continuación se muestra como se activa y se ejecuta el script con los servicios y como desde otro nodo se acceden a los servicios desde el navegador
+  * Ya creado el script lo ejecutamos dentro del ambiente virtual, a continuación se muestra como se activa y se ejecuta el script con los servicios y como desde otro nodo se acceden a los servicios desde el navegador. Da click sobre la imagen para ver video del funcionamiento.
   
   *  [![Proyecto Final - Sistemas Operacionales](https://github.com/LookIron/so-project/blob/A00320168/project-solution/A00320168/images/video.png)](https://youtu.be/tuykFwNYWfQ)
   
