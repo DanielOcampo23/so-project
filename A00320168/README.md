@@ -89,10 +89,48 @@ Para la realización del proyecto seguimos los siguientes pasos:
      <img src="images/red2.png" alt="webservice architecture"/>
      </p>
     
-  * Verificación del archivo interfaces: Debido a que nuestra red cuenta con `dhcp` la ip se genera dinamicamente por la tanto vamos a fijar nuestra interfaces para que sea estatica y quede permanente en el archivo de configuración.
+  * Verificación del archivo interfaces: Debido a que nuestra red cuenta con `dhcp` la ip se genera dinamicamente por la tanto NO vamos a fijar nuestra interfaces para que sea estatica y quede permanente sino que el archivo la dejaremos así, y a través del comando en el siguiente ítem habilitaremos la ip de la interfaces manual. A continuación mostramos el archivo de configuración.
   
+     ```vim
+     # vim /etc/network/interfaces
+     ```
+     
+     ```vim
+      # This file describes the network interfaces available on your system
+      # and how to activate them. For more information, see interfaces(5).
+      
+      source /etc/network/interfaces.d/*
+      
+      # The loopback network interface
+      auto lo
+      iface lo inet loopback
+      
+      # The primary network interface
+      auto enp0s3
+      iface enp0s3 inet dhcp
+      
+      # The secondary network interface
+      auto enp0s8
+      iface enp0s8 inet manual
+     
+     ```
+     
+  * Luego de lo anterior y reiniciar la red realizamos lo siguiente para poner la ip de la interfaces, luego habilitamos la ip del gateway y luego reiniciamos la red.
+    
+     ```vim
+     # ip addr add 192.168.130.170/24 dev enp0s8
+     # route add default gw 192.168.130.1
+     # service networking restart
+     ```
+  
+  * Vale aclarar que los comandos se realizaron por conexión ssh como se muestra a continuación, el primer comando lo ejecutamos desde la maquina virtual, y la conexión la realizamos desde el nodo host.
+  
+     ```vim
+     # apt-get install openssh
+     ```
+     
      <p align="center">
-     <img src="images/red3.png" alt="webservice architecture"/>
+     <img src="images/ssh.png" alt="webservice architecture"/>
      </p>
       
 
@@ -127,182 +165,84 @@ Para la realización del proyecto seguimos los siguientes pasos:
 
 #### *4. Instalación de las dependencias:* Debemos realizar esto para la configuración del ambiente virtual. Para esto realizamos los siguientes pasos:
 
-  * Debemos de verificar la versión de python la cual en `Ubuntu Server 16.04` viene por defecto la 3, y para nuestras pruebas vamos a utilizar la versión 2.7. Ahora instalamos las dependencias necesarias para `Python`.
+  * Debemos de verificar la versión de python la cual en `Ubuntu Server 16.04` viene por defecto la 3, una vez realizado esto se instalaron las siguientes dependencias:
   
      ```vim
-     # apt-get install build-essential checkinstall
-     # apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
-     # wget https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz
-     # tar xzf Python-2.7.13.tgz
-     
+     # sudo apt-get install python3-pip
+     # sudo pip3 install virtualenv     
 
-     ```
-  Una vez descargado y descomprimido este archivo proseguimos a la compilación e instalación
+     ```     
+     <p align="center">
+     <img src="images/instalDepen.png" alt="webservice architecture"/>
+     </p>
+     
+  * Una vez descargado las dependencias para el ambiente de virtualización creamos el ambiente `proyecto` 
   
      ```vim
-     # cd Python-2.7.13
-     # sudo ./configure
-     # sudo make install
+     # virtualenv proyecto
     
      ```
-  
-  * despues de configurar e instalar python debemos instalar y configurar en ambiente virtual
-  
-     ```vim
-     # sudo wget https://bootstrap.pypa.io/get-pip.py
-     # python get-pip.py
-     # pip install virtualenv
-     
-     # cd ~/
-     # mkdir envs
-     # cd envs
-     # virtualenv flask_env
-
-     ```
-  
-  * Se instaló virtulenv
-  
-      ```vim
-     # ufw status verbose
-
-     ```
-  
-  * Se instaló virtualwrapper
+  * Proseguimos a activar el ambiente
   
      ```vim
-     # ufw status verbose
-
+     # source proyecto/bin/activate
+    
      ```
-  
-  * Verificación de las dependencias instaladas
+       
+  * Ahora dentro del ambiente instalamos `flask`
   
      <p align="center">
-     <img src="images/.png" alt="webservice architecture"/>
+     <img src="images/intDependencias.png" alt="webservice architecture"/>
      </p>
-
-5.
-
-  * 
   
-  *
-  
-  *
-  Proyecto Final - Sistemas Operacionales
-  https://youtu.be/tuykFwNYWfQ
-  
-------------------------  
 
-from flask import Flask
-import os
-app = Flask(__name__)
+#### *5. Aplicación en Python:* Para este paso creamos la un script el cual tendrá los servicios requeridos dentro del proyecto como la consulta del uso de cpu, espacio en disco, la memoria y el netstat.
 
-@app.route("/memoria")
-def memory():
+  * Dentro del entorno virtual creamos el siguiente script  `services.py`
+  
+      ```vim
+      from flask import Flask
+      import os
+      app = Flask(__name__)
+      
+      @app.route("/memoria")
+      def memory():
         m=os.system("echo | free > /home/proyecto/memory_Info.txt")
         f=open("/home/proyecto/memory_Info.txt","r")
         return f.read()
-
-@app.route("/cpu")
-def cpu():
+      
+      @app.route("/cpu")
+      def cpu():
         m=os.system("echo | lscpu > /home/proyecto/cpu_Info.txt")
         f=open("/home/proyecto/cpu_Info.txt","r")
         return f.read()
-
-@app.route("/disco")
-def disk():
+      
+      @app.route("/disco")
+      def disk():
         m=os.system("echo | df > /home/proyecto/disco_Info.txt")
         f=open("/home/proyecto/disco_Info.txt","r")
         return f.read()
-
-@app.route("/netstat")
-def netstat():
+        
+      @app.route("/netstat")
+      def netstat():
         m=os.system("echo | netstat > /home/proyecto/netstat_Info.txt")
         f=open("/home/proyecto/netstat_Info.txt","r")
         return f.read()
-
-if __name__=="__main__":
+      if __name__=="__main__":
         app.run('0.0.0.0',port=8080)
-----------------------------
-
-
-ip addr add 192.168.130.100/24 dev enp0s3
-    3  ping 8.8.8.8
-    4  clear
-    5  sudo apt-get install python3-pip
-    6  clear
-    7  sudo pip3 install virtualenv
-    8  clear
-    9  ip a
-   10  ip addr add 192.168.130.170/24 dev enp0s3
-   11  sudo ip addr add 192.168.130.170/24 dev enp0s3
-   12  sudo nmcli con up enp0s8
-   13  sudo nmcli con up enp0s3
-   14  ip a
-   15  ping 8.8.8.8
-   16  clear
-   17  virtualenv proyecto
-   18  source proyecto/bin/activate
-   19  pip install flask
-   20  vi script.py
-   21  exit
-   22  ip a
-   23  ls /etc/network/
-   24  nano /etc/network/interfaces
-   25  ls /etc/network/
-   26  nano /etc/network/interfaces
-   27  ip a
-   28  sudo nano /etc/network/interfaces
-   29  sudo service networking restart
-   30  service networking status
-   31  ip addr add 192.168.130.170/24 dev enp0s8
-   32  sudo ip addr add 192.168.130.170/24 dev enp0s8
-   33  ip a
-   34  ping 192.168.130.1 -S
-   35  ping 192.168.130.1 -I enp0s8
-   36  ping 192.168.113.1 -I enp0s8
-   37  ping 192.168.130.1 -I enp0s8
-   38  ping 192.168.113.1 -I enp0s8
-   39  ping 8.8.8.8 -I enp0s8
-   40  nmcli
-   41  sudo route add default gw 192.168.130.1
-   42  ping 8.8.8.8 -I enp0s8
-   43  ping 192.168.113.1 -I enp0s8
-   44  sudo service networking restart
-   45  sudo service networking restart -v
-   46  sudo service networking restart
-   47  ping 192.168.113.1 -I enp0s8
-   48  ping 192.168.113.1 -v
-   49  ip a
-   50  ping 192.168.104.1
-   51  ping 8.8.8.8
-   52  apt-get install openssh-server
-   53  sudo apt-get install openssh-server
-   54  ufw
-   55  ufw ?
-   56  ufw status verbose
-   57  sudo ufw status verbose
-   58  cat /etc/network/interfaces
------------------------------------------------------
-
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
-
-source /etc/network/interfaces.d/*
-
-# The loopback network interface
-auto lo
-iface lo inet loopback
-
-# The primary network interface
-auto enp0s3
-iface enp0s3 inet dhcp
-
-# The secondary network interface
-auto enp0s8
-iface enp0s8 inet manual
--------------------------------------------
+      
+      ```
+  
+  * Ya creado el script lo ejecutamos dentro del ambiente virtual ya creado y activado, a continuación se muestra como se activa y se ejecuta el script con los servicios y como desde otro nodo se acceden a los servicios desde el navegador
+  
+  *  [![Proyecto Final - Sistemas Operacionales](https://github.com/LookIron/so-project/blob/A00320168/project-solution/A00320168/images/video.png)](https://youtu.be/tuykFwNYWfQ)
+  
+  
+  
 
  
 ## Referencias
 * https://www.ubuntu.com/download/server
+* https://gist.github.com/celtha/1214442
+* https://conectabell.com/procfs-con-python/
 
