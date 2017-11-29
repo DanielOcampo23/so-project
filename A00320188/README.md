@@ -89,19 +89,19 @@ installPython3.png
 ## * Creación de ambientes virtuales  
 Proseguimos con la creacion de ambiente en donde trabajaremos esto mediante el siguiente comando  
 
- ```vim
+```vim
 virtualenv entorno
-   ```  
+```  
  Y para la activacion del ambiente el siguiente comando  
  
-  ```vim
+```vim
 source entorno/bin/activate
-   ```  
-   y finalmente la instalación de flask dentro del entorno ya creado  
-     ```vim
+```  
+y finalmente la instalación de flask dentro del entorno ya creado  
+```vim
 pip install flask
-   ```  
-   creacionentorno.png  
+```  
+creacionentorno.png  
    
 ## * Aplicación en Python   
 
@@ -112,9 +112,9 @@ scriptpython.png
 
 ## * Validación de la ejecución del servicio (netstat)   
 ejecutamos el siguiente comando para validar que nuestro script funciona correctamente  
-     ```vim
+```vim
 python scriptInfoCPU.py
-   ``` 
+``` 
    A continuación un video del funcionamiento configurado  
    
    
