@@ -49,4 +49,18 @@ El siguiente proyecto consiste en el despliegue de una aplicación web para obte
 
 ## * Instalación Sistema operativo Ubuntu Server 16.04  n 
 
-imagenes instalacion
+imagenes instalacion  
+
+
+## * Configuración de interfaces de red  
+imagenes adapter y nat
+
+interfaces.png  
+puertos.png  
+
+
+
+
+
+## * Configuración de puertos 
+
