@@ -46,3 +46,7 @@ El siguiente proyecto consiste en el despliegue de una aplicación web para obte
 ----------------
 
 ## Desarrollo
+
+## * Instalación Sistema operativo Ubuntu Server 16.04  n 
+
+imagenes instalacion
