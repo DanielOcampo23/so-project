@@ -56,11 +56,12 @@ imagenes instalacion
 imagenes adapter y nat
 
 interfaces.png  
+
+
+## * Configuración de puertos   
 puertos.png  
 
-
-
-
-
-## * Configuración de puertos 
-
+## * Instalación de dependencias  
+## * Creación de ambientes virtuales  
+## * Aplicación en Python 
+## * Validación de la ejecución del servicio (netstat) 
