@@ -57,8 +57,8 @@ imagenes adapter y nat
 
 Este taller se desarrolló dentro de la red del laboratorio de redes, que nos generaba una ip dinamica, tuvimos que configurar el archivo interfaces para habilitar la ip de las interfaces de forma manual, como muestra en la imagen.  
 
+![GitHub Logo2](Imagenes/interfaces.png) 
 
-interfaces.png  
 
 Asignamos la ip 192.168.130.168/24 y el gateway, a continuación se muestra este proceso por medio de los comandos ip addr, route  
 
@@ -73,7 +73,8 @@ service networking restart
 
 EL siguiente paso es el de habilitar el firewall y el puerto 8080, a travs de los comandos ufw enable y ufw allow 8080, a continuación se muestra la imagen de la configuración  
 
-puertos.png  
+![GitHub Logo2](Imagenes/puertos.png) 
+  
 
 ## * Instalación de dependencias  
 
@@ -84,7 +85,9 @@ Se instalaron las siguientes dependencias
 sudo apt-get install python3-pip
 sudo pip3 install virtualenv
    ```  
-installPython3.png  
+
+![GitHub Logo2](Imagenes/installPython3.png 
+
 
 ## * Creación de ambientes virtuales  
 Proseguimos con la creacion de ambiente en donde trabajaremos esto mediante el siguiente comando  
@@ -101,17 +104,24 @@ y finalmente la instalación de flask dentro del entorno ya creado
 ```vim
 pip install flask
 ```  
-creacionentorno.png  
+
+![GitHub Logo2](Imagenes/creacionEntorno.png) 
    
 ## * Aplicación en Python   
 
 El proyecto tiene como requerimiento el despliegue de una aplicación web para obtener información del sistema operativo, para lograr esto construimos el siguiente script en python dentro del ambiente virtual, que se encarga de hacer llamados al sistema operativo, guardarlos y luego retornarlos, a continuacion la estructura del script.  
 
-scriptpython.png  
+
+![GitHub Logo2](Imagenes/scriptpython.png ) 
 
 
 ## * Validación de la ejecución del servicio (netstat)   
-ejecutamos el siguiente comando para validar que nuestro script funciona correctamente  
+ejecutamos el siguiente comando para validar que nuestro script funciona correctamente, pero para este debemos darle permisos a la carpeta donde estamos guardando los reportes.
+
+
+![GitHub Logo2](Imagenes/permisosCarpeta.png)   
+
+Ahora si ejecutamos nuestro script  
 ```vim
 python scriptInfoCPU.py
 ``` 
