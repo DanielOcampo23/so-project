@@ -5,7 +5,7 @@
 **Nombres:**
   * Esteban Aguirre - A00320188  
   * Daniel Ocampo - A00053980 
-  * Sergio Ospina - 
+  * Sergio Ospina - A00057008
   
   *Github URL:** https://github.com/esteban9212/so-project
 
