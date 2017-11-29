@@ -97,6 +97,25 @@ virtualenv entorno
   ```vim
 source entorno/bin/activate
    ```  
+   y finalmente la instalación de flask dentro del entorno ya creado  
+     ```vim
+pip install flask
+   ```  
+   creacionentorno.png  
    
-## * Aplicación en Python 
-## * Validación de la ejecución del servicio (netstat) 
+## * Aplicación en Python   
+
+El proyecto tiene como requerimiento el despliegue de una aplicación web para obtener información del sistema operativo, para lograr esto construimos el siguiente script en python dentro del ambiente virtual, que se encarga de hacer llamados al sistema operativo, guardarlos y luego retornarlos, a continuacion la estructura del script.  
+
+scriptpython.png  
+
+
+## * Validación de la ejecución del servicio (netstat)   
+ejecutamos el siguiente comando para validar que nuestro script funciona correctamente  
+     ```vim
+python scriptInfoCPU.py
+   ``` 
+   A continuación un video del funcionamiento configurado  
+   
+   
+
