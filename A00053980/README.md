@@ -6,8 +6,8 @@
 **Tema:**  Servicios web  
 **Correo:** daniel.barragan at correo.icesi.edu.co
 
-**Estudiante:** Daniel Steven Ocampo
-**Código:** A00053980
+**Estudiante:** Daniel Steven Ocampo  
+**Código:** A00053980  
 **Correo:** danielsteven23@hotmail.com ó daniel.ocampo2@correo.icesi.edu.co
 
 ## Objetivos
