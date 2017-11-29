@@ -86,7 +86,7 @@ sudo apt-get install python3-pip
 sudo pip3 install virtualenv
    ```  
 
-![GitHub Logo2](Imagenes/installPython3.png 
+![GitHub Logo2](Imagenes/installPython3.png)
 
 
 ## * Creación de ambientes virtuales  
@@ -112,7 +112,7 @@ pip install flask
 El proyecto tiene como requerimiento el despliegue de una aplicación web para obtener información del sistema operativo, para lograr esto construimos el siguiente script en python dentro del ambiente virtual, que se encarga de hacer llamados al sistema operativo, guardarlos y luego retornarlos, a continuacion la estructura del script.  
 
 
-![GitHub Logo2](Imagenes/scriptpython.png ) 
+![GitHub Logo2](Imagenes/scriptpython.png) 
 
 
 ## * Validación de la ejecución del servicio (netstat)   
