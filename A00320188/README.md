@@ -55,7 +55,19 @@ imagenes instalacion
 ## * Configuración de interfaces de red  
 imagenes adapter y nat
 
+Este taller se desarrolló dentro de la red del laboratorio de redes, que nos generaba una ip dinamica, tuvimos que configurar el archivo interfaces para habilitar la ip de las interfaces de forma manual, como muestra en la imagen.  
+
+
 interfaces.png  
+
+Asignamos la ip 192.168.130.168/24 y el gateway, a continuación se muestra este proceso por medio de los comandos ip addr, route  
+
+
+ ```vim
+ip addr add 192.168.130.168/24 dev enp0s8
+route add default gw 192.168.130.1
+service networking restart 
+   ```
 
 
 ## * Configuración de puertos   
