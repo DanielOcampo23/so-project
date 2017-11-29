@@ -62,7 +62,6 @@ interfaces.png
 
 Asignamos la ip 192.168.130.168/24 y el gateway, a continuación se muestra este proceso por medio de los comandos ip addr, route  
 
-
  ```vim
 ip addr add 192.168.130.168/24 dev enp0s8
 route add default gw 192.168.130.1
@@ -70,10 +69,34 @@ service networking restart
    ```
 
 
-## * Configuración de puertos   
-puertos.png  
+## * Configuración de puertos 
+
+EL siguiente paso es el de habilitar el firewall y el puerto 8080, a travs de los comandos ufw enable y ufw allow 8080, a continuación se muestra la imagen de la configuración  
+
+puertos.png  
 
 ## * Instalación de dependencias  
+
+Se instalaron las siguientes dependencias
+
+
+ ```vim
+sudo apt-get install python3-pip
+sudo pip3 install virtualenv
+   ```  
+installPython3.png  
+
 ## * Creación de ambientes virtuales  
+Proseguimos con la creacion de ambiente en donde trabajaremos esto mediante el siguiente comando  
+
+ ```vim
+virtualenv entorno
+   ```  
+ Y para la activacion del ambiente el siguiente comando  
+ 
+  ```vim
+source entorno/bin/activate
+   ```  
+   
 ## * Aplicación en Python 
 ## * Validación de la ejecución del servicio (netstat) 
