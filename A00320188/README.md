@@ -25,7 +25,7 @@ Para el despliegue de una aplicación en un servidor se requiere conocer los pro
 El siguiente proyecto consiste en el despliegue de una aplicación web para obtener información del sistema operativo (La aplicación debe permitir consulta uso de CPU, memoria y espacio en disco). Para este propósito se debe emplear el sistema operativo Ubuntu Server 16.04, el microframework flask y ambientes virtuales.
 
 <p align="center">
-  <img src="Imagenes/vista-despliegue.pngg" alt="webservice architecture"/>
+  <img src="Imagenes/vista-despliegue.png" alt="webservice architecture"/>
 </p>
 
 ## Actividades
