@@ -71,7 +71,7 @@ service networking restart
 
 ## * Configuración de puertos 
 
-EL siguiente paso es el de habilitar el firewall y el puerto 8080, a travs de los comandos ufw enable y ufw allow 8080, a continuación se muestra la imagen de la configuración  
+EL siguiente paso es el de habilitar el firewall y el puerto 8080, a traves de los comandos ufw enable y ufw allow 8080, a continuación se muestra la imagen de la configuración  
 
 ![GitHub Logo2](Imagenes/puertos.png) 
   
@@ -90,7 +90,7 @@ sudo pip3 install virtualenv
 
 
 ## * Creación de ambientes virtuales  
-Proseguimos con la creacion de ambiente en donde trabajaremos esto mediante el siguiente comando  
+Proseguimos con la creacion de ambiente en donde trabajaremos, esto mediante el siguiente comando  
 
 ```vim
 virtualenv entorno
