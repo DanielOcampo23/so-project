@@ -57,15 +57,13 @@ Este taller se desarrolló dentro de la red del laboratorio de redes, que nos ge
 ![GitHub Logo2](Imagenes/interfaces.png) 
 
 
-Asignamos la ip 192.168.130.168/24 y el gateway, a continuación se muestra este proceso por medio de los comandos ip addr, route  
+Asignamos la ip 192.168.130.168/24 a la interfaz de red y configuramos el gateway, a continuación se muestra este proceso por medio de los comandos ip addr, route  
 
  ```vim
 ip addr add 192.168.130.168/24 dev enp0s8
 route add default gw 192.168.130.1
 service networking restart 
    ```
-
-
 ## * Configuración de puertos 
 
 EL siguiente paso es el de habilitar el firewall y el puerto 8080, a traves de los comandos ufw enable y ufw allow 8080, a continuación se muestra la imagen de la configuración  
@@ -75,7 +73,7 @@ EL siguiente paso es el de habilitar el firewall y el puerto 8080, a traves de l
 
 ## * Instalación de dependencias  
 
-Se instalaron las siguientes dependencias
+EL siguiente paso es el de la instalación de las dependencias necesarias para el funcionamiento del servidor, esta dependencias nos permitiran la creación de un ambiente virtual, y la instalación de flask sobre ese ambiente, en donde correra el servicio desarrollado, esto se hace con los siguientes comandos.
 
 
  ```vim
