@@ -129,7 +129,7 @@ A continuación un video del funcionamiento configurado
    
      * Ya creado el script lo ejecutamos dentro del ambiente virtual, a continuación se muestra como se activa y se ejecuta el script con los servicios y como desde otro nodo se acceden a los servicios desde el navegador. Da click sobre la imagen para ver video del funcionamiento.
   
-  *  [![Proyecto Final - Sistemas Operacionales](https://www.youtube.com/watch?v=qAihzvqKkF4&feature=youtu.be)
+  *  [ir a video](https://www.youtube.com/watch?v=qAihzvqKkF4&feature=youtu.be)
 
 
 
