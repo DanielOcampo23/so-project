@@ -42,8 +42,6 @@ El siguiente proyecto consiste en el despliegue de una aplicación web para obte
 * Pruebas de la solución a través de capturas de pantalla. Puede emplear si lo desea una herramienta de captura de pantalla a formato .gif (10%)
 * El informe debe ser entregado en formato pdf a través del moodle y el informe en formato README.md debe ser subido a un repositorio de github. El repositorio de github debe ser un fork de https://github.com/ICESI-Training/so-project y para la entrega deberá hacer un Pull Request (PR) respetando la estructura definida. El código fuente y la url de github deben incluirse en el informe (10%).
 
-----------------
-
 ## Desarrollo
 
 ## * Instalación Sistema operativo Ubuntu Server 16.04  n 
