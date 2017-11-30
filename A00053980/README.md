@@ -51,7 +51,7 @@ El siguiente proyecto consiste en el despliegue de una aplicación web para obte
 Para la instalación del sistema operativo se descargó la imagen (.iso) del ubuntu server, posterior a esto se realizó la instalación de la maquina virtual en Virtual Box como lo muestra en la imagen.
 
 <p align="center">
-  <img src="instalacionUbuntuServer.jpg" alt="instalacion"/>
+  <img src="images/instalacionUbuntuServer.jpg" alt="instalacion"/>
 </p>
 
 
@@ -60,7 +60,7 @@ Para la instalación del sistema operativo se descargó la imagen (.iso) del ubu
 En las configuraciones de la maquina virtual dentro del virtual box, configuramos dos adaptadores, un adaptador NAT y un Adatador puente (enp0s8) como lo muestra en la siguiente imagen
 
 <p align="center">
-  <img src="configuracionRed.jpg" alt="instalacion"/>
+  <img src="images/configuracionRed.jpg" alt="instalacion"/>
 </p>
 
 
