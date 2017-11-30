@@ -1,18 +1,17 @@
-## proyecto Sistemas Operativos
-
 **Universidad ICESI**  
-
-**Nombres:**
-  * Esteban Aguirre - A00320188  
-  * Daniel Ocampo - A00053980 
-  * Sergio Ospina - A00057008
-  
-  *Github URL:** https://github.com/esteban9212/so-project
 
 **Curso:** Sistemas Operativos  
 **Docente:** Daniel Barragán C.  
 **Tema:**  Servicios web  
 **Correo:** daniel.barragan at correo.icesi.edu.co
+**Nombres:**
+  * Esteban Aguirre - A00320188  
+  * Daniel Ocampo - A00053980 
+  * Sergio Ospina - A00057008
+**URL GitHub:** https://github.com/esteban9212/so-project  
+**URL Youtube:** https://www.youtube.com/watch?v=qAihzvqKkF4&feature=youtu.be  
+
+## proyecto Sistemas Operativos  
 
 ## Objetivos
 * Desplegar una aplicación en un servidor que ejecuta el sistema operativo Linux
